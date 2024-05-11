@@ -6,6 +6,7 @@ const 最小 = "min";
 const 最大 = "max";
 const 間隔 = "step";
 const 輸入 = "input";
+const 點擊 = "click";
 const 獲益顏色 = "blue";
 const 虧損顏色 = "red";
 const 賣出價格背景顏色 = "gold";
@@ -74,6 +75,14 @@ class 計算器 {
 
   get 報價節點() {
     return 取得節點("報價");
+  }
+
+  get 網址() {
+    return 取得節點("網址");
+  }
+
+  get 複製網址按鈕() {
+    return 取得節點("複製網址");
   }
 
   get 交易類別() {
@@ -183,6 +192,7 @@ class 計算器 {
     this.最低手續費欄位[值] = 想起("最低手續費", 預設最低手續費);
     this.手續費折扣欄位[值] = 想起("手續費折扣", 預設手續費折扣);
     this.報價檔數欄位[值] = 想起("報價檔數", 預設報價檔數);
+    this.網址[值] = window.location.href;
   }
 
   註冊事件() {
@@ -204,7 +214,7 @@ class 計算器 {
     });
 
     註冊事件(this.模式欄位, 輸入, (event) => {
-      const 模式 = event.target.value;
+      const 模式 = event.target[值];
 
       記住("模式", 模式);
 
@@ -212,25 +222,30 @@ class 計算器 {
     });
 
     註冊事件(this.最低手續費欄位, 輸入, (event) => {
-      const 最低手續費 = 取得數值(event.target.value);
+      const 最低手續費 = 取得數值(event.target[值]);
 
       this.最低手續費合理(最低手續費) ? 記住("最低手續費", 最低手續費) : 忘記("最低手續費");
     });
 
     註冊事件(this.手續費折扣欄位, 輸入, (event) => {
-      const 手續費折扣 = 取得數值(event.target.value);
+      const 手續費折扣 = 取得數值(event.target[值]);
 
       this.手續費折扣合理(手續費折扣) ? 記住("手續費折扣", 手續費折扣) : 忘記("手續費折扣");
     });
 
     註冊事件(this.報價檔數欄位, 輸入, (event) => {
-      const 報價檔數 = 取得數值(event.target.value);
+      const 報價檔數 = 取得數值(event.target[值]);
 
       this.報價檔數合理(報價檔數) ? 記住("報價檔數", 報價檔數) : 忘記("報價檔數");
     });
 
     註冊事件(文件, 輸入, () => {
       this.處理報價();
+    });
+
+    註冊事件(this.複製網址按鈕, 點擊, async () => {
+      await navigator.clipboard.writeText(this.網址[值]);
+      $('#modal-share').modal('hide');
     });
   }
 
