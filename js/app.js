@@ -192,7 +192,6 @@ class 計算器 {
     this.最低手續費欄位[值] = 想起("最低手續費", 預設最低手續費);
     this.手續費折扣欄位[值] = 想起("手續費折扣", 預設手續費折扣);
     this.報價檔數欄位[值] = 想起("報價檔數", 預設報價檔數);
-    this.網址[值] = window.location.href;
   }
 
   註冊事件() {
@@ -244,8 +243,23 @@ class 計算器 {
     });
 
     註冊事件(this.複製網址按鈕, 點擊, async () => {
-      await navigator.clipboard.writeText(this.網址[值]);
-      $('#modal-share').modal('hide');
+      try {
+        await navigator.clipboard.writeText(this.網址[值]);
+      } catch (e) {
+        //
+      }
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: '與你分享好用的股票交易計算器',
+            url: document.location.href,
+          });
+        } catch (e) {
+          //
+        }
+      }
+      $("#modal-share").modal("hide");
     });
   }
 
