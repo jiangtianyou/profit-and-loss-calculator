@@ -19,11 +19,15 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+  if (event.request.url.includes("pagead2.googlesyndication.com")) {
+    event.respondWith(new Response(null, { status: 200 }));
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
 
 self.addEventListener("activate", (event) => {
@@ -31,9 +35,7 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
-          }
+          return caches.delete(cacheName);
         })
       );
     })
