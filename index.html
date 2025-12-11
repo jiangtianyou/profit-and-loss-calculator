@@ -11,12 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Memo Chou">
-    <meta name="description" content="简单易用的股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、证券交易税、损益金额、报酬率。">
-    <meta name="keywords" content="台股, 股市, 股票, 股票交易, 股票交易计算器, 股票交易计算机, 计算器, 计算机">
+    <meta name="description" content="A股股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、印花税、盈亏金额、收益率。">
+    <meta name="keywords" content="A股, 股市, 股票, 股票交易, 股票交易计算器, 股票交易计算机, 计算器, 计算机">
     <meta property="og:type" content="website">
     <meta property="og:title" content="股票交易计算器">
-    <meta property="og:description" content="简单易用的股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、证券交易税、损益金额、报酬率。">
-    <meta property="og:image" content="https://stock.epoch.tw/images/cover.png">
+    <meta property="og:description" content="简单易用的股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、印花税、盈亏金额、收益率。">
+    <meta property="og:image" content="https://github.com/jiangtianyou/profit-and-loss-calculatorimages/cover.png">
     <meta property="og:image:alt" content="股票交易计算器">
     <meta property="og:image:type" content="image/png">
     <meta name="theme-color" content="white">
@@ -78,8 +78,8 @@
                     <th class="详细字段" hidden>买入手续费</th>
                     <th class="详细字段" hidden>卖出手续费</th>
                     <th class="详细字段" hidden>印花税</th>
-                    <th>损益金额</th>
-                    <th>报酬率</th>
+                    <th>盈亏金额</th>
+                    <th>收益率</th>
                 </tr>
             </thead>
             <tbody id="报价"></tbody>
@@ -97,9 +97,9 @@
                 <li>券商佣金+证管费+经手费 不足5元按照5元收取</li>
             </ul>
         </div>
-        <div class="text-center mt-md-5" id="footer">
-            Designed by <a href="https://profile.epoch.tw/" rel="noopener noreferrer" target="_blank">Memo Chou</a>
-        </div>
+<!--        <div class="text-center mt-md-5" id="footer">-->
+<!--            Designed by <a href="https://profile.epoch.tw/" rel="noopener noreferrer" target="_blank">Memo Chou</a>-->
+<!--        </div>-->
     </div>
     <div class="modal fade" id="modal-configure" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -152,7 +152,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group mb-0">
-                        <input type="text" class="form-control form-control-sm mb-3" value="https://stock.epoch.tw/" readonly id="网址">
+                        <input type="text" class="form-control form-control-sm mb-3" value="https://github.com/jiangtianyou/profit-and-loss-calculator" readonly id="网址">
                         <button class="btn btn-sm btn-block btn-warning" id="复制网址">复制网址</button>
                     </div>
                 </div>
