@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hans">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SQ9REF9DNR"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-SQ9REF9DNR');
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1523667193708406" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Memo Chou">
-    <meta name="description" content="簡單易用的股票交易計算器。根據交易類別、買入價格、賣出價格、交易股數，計算成交價格、支付總金額、實收總金額、買入手續費、賣出手續費、證券交易稅、損益金額、報酬率。">
-    <meta name="keywords" content="台股, 股市, 股票, 股票交易, 股票交易計算器, 股票交易計算機, 計算器, 計算機">
+    <meta name="description" content="简单易用的股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、证券交易税、损益金额、报酬率。">
+    <meta name="keywords" content="台股, 股市, 股票, 股票交易, 股票交易计算器, 股票交易计算机, 计算器, 计算机">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="股票交易計算器">
-    <meta property="og:description" content="簡單易用的股票交易計算器。根據交易類別、買入價格、賣出價格、交易股數，計算成交價格、支付總金額、實收總金額、買入手續費、賣出手續費、證券交易稅、損益金額、報酬率。">
+    <meta property="og:title" content="股票交易计算器">
+    <meta property="og:description" content="简单易用的股票交易计算器。根据交易类别、买入价格、卖出价格、交易股数，计算成交价格、支付总金额、实收总金额、买入手续费、卖出手续费、证券交易税、损益金额、报酬率。">
     <meta property="og:image" content="https://stock.epoch.tw/images/cover.png">
-    <meta property="og:image:alt" content="股票交易計算器">
+    <meta property="og:image:alt" content="股票交易计算器">
     <meta property="og:image:type" content="image/png">
     <meta name="theme-color" content="white">
-    <title>股票交易計算器</title>
+    <title>股票交易计算器</title>
     <link rel="icon" href="images/icon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -31,10 +29,10 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="./">股票交易計算器</a>
+        <a class="navbar-brand" href="./">股票交易计算器</a>
         <div class="ml-auto text-white">
             <button class="btn btn-sm btn-outline-light" data-toggle="modal" data-target="#modal-configure">
-                設定
+                设置
             </button>
             <button class="btn btn-sm btn-outline-warning" data-toggle="modal" data-target="#modal-share">
                 分享
@@ -45,59 +43,60 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group mb-4">
-                    <label for="交易類別">交易類別</label>
-                    <select class="form-control form-control-sm" id="交易類別">
-                        <option value="現股">現股</option>
-                        <option value="現股當沖">現股當沖</option>
+                    <label for="交易类别">交易类别</label>
+                    <select class="form-control form-control-sm" id="交易类别">
+                        <option value="现股">现股</option>
+                        <option value="现股当冲">现股当冲</option>
                         <option value="ETF">ETF</option>
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group mb-4">
-                    <label for="買入價格">買入價格</label>
-                    <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.1" min="0" max="10000" id="買入價格" autofocus>
+                    <label for="买入价格">买入价格</label>
+                    <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.1" min="0" max="10000" id="买入价格" autofocus>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group mb-4">
-                    <label for="賣出價格">賣出價格</label>
-                    <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.1" min="0" max="10000" id="賣出價格">
+                    <label for="卖出价格">卖出价格</label>
+                    <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.1" min="0" max="10000" id="卖出价格">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group mb-4">
-                    <label for="交易股數">交易股數</label>
-                    <input type="number" inputmode="numeric" value="1000" class="form-control form-control-sm" autocomplete="off" step="1000" min="0" max="100000000" id="交易股數">
+                    <label for="交易股数">交易股数</label>
+                    <input type="number" inputmode="numeric" value="100" class="form-control form-control-sm" autocomplete="off" step="100" min="0" max="100000000" id="交易股数">
                 </div>
             </div>
         </div>
         <table class="table table-sm table-bordered table-striped table-responsive-md mb-4" id="表格" hidden>
             <thead class="thead-dark">
                 <tr class="text-center">
-                    <th>成交價格</th>
-                    <th class="詳細欄位" hidden>支付總金額</th>
-                    <th class="詳細欄位" hidden>實收總金額</th>
-                    <th class="詳細欄位" hidden>買入手續費</th>
-                    <th class="詳細欄位" hidden>賣出手續費</th>
-                    <th class="詳細欄位" hidden>證券交易稅</th>
-                    <th>損益金額</th>
-                    <th>報酬率</th>
+                    <th>成交价格</th>
+                    <th class="详细字段" hidden>支付总金额</th>
+                    <th class="详细字段" hidden>实收总金额</th>
+                    <th class="详细字段" hidden>买入手续费</th>
+                    <th class="详细字段" hidden>卖出手续费</th>
+                    <th class="详细字段" hidden>印花税</th>
+                    <th>损益金额</th>
+                    <th>报酬率</th>
                 </tr>
             </thead>
-            <tbody id="報價"></tbody>
+            <tbody id="报价"></tbody>
         </table>
         <div class="jumbotron my-4 py-4">
-            <p class="lead">使用說明</p>
+            <p class="lead">使用说明</p>
             <hr>
             <ul class="mb-0">
-                <li>公定手續費費率：0.1425%</li>
-                <li>證券交易稅稅率：0.3%</li>
-                <li>現股當沖證券交易稅稅率：0.15%</li>
-                <li>指數股票型基金（ETF）證券交易稅稅率：0.1%</li>
-                <li>小數點按四捨五入計算</li>
-                <li>電腦版可使用上下鍵調整價格</li>
-                <li>手機版可加入主畫面離線使用</li>
+                <li>券商佣金：0.025% (万2.5)</li>
+                <li>证管费：0.02% (万2)</li>
+                <li>经手费：0.00341% (十万3.41)</li>
+                <li>印花税：0.05% (万5 卖方收取)</li>
+                <li>过户费：0.001% (十万1)</li>
+                <li>小数点按四舍五入计算</li>
+                <li>电脑版可使用上下键调整价格</li>
+                <li>券商佣金+证管费+经手费 不足5元按照5元收取</li>
             </ul>
         </div>
         <div class="text-center mt-md-5" id="footer">
@@ -109,7 +108,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        設定
+                        设置
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -119,24 +118,24 @@
                     <div class="form-group">
                         <label for="模式">模式</label>
                         <select class="form-control form-control-sm" id="模式">
-                            <option value="簡易" selected>簡易</option>
-                            <option value="詳細">詳細</option>
+                            <option value="简易" selected>简易</option>
+                            <option value="详细">详细</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="最低手續費">最低手續費</label>
-                        <input type="number" inputmode="numeric" class="form-control form-control-sm" autocomplete="off" step="1"" min="0" max="20" id="最低手續費">
-                        <small class="form-text text-secondary">請輸入 0 至 20 之間的數值</small>
+                        <label for="最低手续费">最低手续费</label>
+                        <input type="number" inputmode="numeric" class="form-control form-control-sm" autocomplete="off" step="1" min="0" max="20" id="最低手续费">
+                        <small class="form-text text-secondary">请输入 0 至 20 之间的数值</small>
                     </div>
                     <div class="form-group">
-                        <label for="手續費折扣">手續費折扣</label>
-                        <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.05" min="0.1" max="1" id="手續費折扣">
-                        <small class="form-text text-secondary">請輸入 0.1 至 1 之間的數值</small>
+                        <label for="手续费折扣">手续费折扣</label>
+                        <input type="number" inputmode="decimal" class="form-control form-control-sm" autocomplete="off" step="0.05" min="0.1" max="1" id="手续费折扣">
+                        <small class="form-text text-secondary">请输入 0.1 至 1 之间的数值</small>
                     </div>
                     <div class="form-group">
-                        <label for="報價檔數">報價檔數</label>
-                        <input type="number" inputmode="numeric" class="form-control form-control-sm" autocomplete="off" step="1" min="0" max="50" id="報價檔數">
-                        <small class="form-text text-secondary">請輸入 0 至 50 之間的數值</small>
+                        <label for="报价档数">报价档数</label>
+                        <input type="number" inputmode="numeric" class="form-control form-control-sm" autocomplete="off" step="1" min="0" max="50" id="报价档数">
+                        <small class="form-text text-secondary">请输入 0 至 50 之间的数值</small>
                     </div>
                 </div>
             </div>
@@ -155,8 +154,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group mb-0">
-                        <input type="text" class="form-control form-control-sm mb-3" value="https://stock.epoch.tw/" readonly id="網址">
-                        <button class="btn btn-sm btn-block btn-warning" id="複製網址">複製網址</button>
+                        <input type="text" class="form-control form-control-sm mb-3" value="https://stock.epoch.tw/" readonly id="网址">
+                        <button class="btn btn-sm btn-block btn-warning" id="复制网址">复制网址</button>
                     </div>
                 </div>
             </div>
